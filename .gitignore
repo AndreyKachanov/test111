@@ -16,3 +16,4 @@ yarn-error.log
 
 #custom
 /public/build
+database.sql
