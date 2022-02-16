@@ -5,9 +5,6 @@ namespace Database\Seeders;
 use App;
 use Illuminate\Database\Seeder;
 
-
-
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -22,6 +19,8 @@ class DatabaseSeeder extends Seeder
             $this->call(UsersTableSeeder::class);
             $this->call(PermissionsTableSeeder::class);
             $this->call(PermissionRolesTableSeeder::class);
+            $this->call(ItemsCategorySeeder::class);
+            $this->call(ItemsSeeder::class);
         }
     }
 }

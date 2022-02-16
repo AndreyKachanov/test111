@@ -8,10 +8,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-@yield('meta')
+    @yield('meta')
 <!-- Styles -->
     <link href="{{ mix('css/app.css', (config('app.env') == 'local') ? 'build' : '' ) }}" rel="stylesheet">
-
+    @yield('custom_css')
 </head>
 <body>
 <div id="app">
@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.author') }}
+                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,34 +32,36 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    @can ('admin-panel')
-                                        <a class="dropdown-item" href="{{ route('admin.home') }}">Admin</a>
-                                    @endcan
-                                    <a class="dropdown-item" href="#">Cabinet</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                                        Logout
+                    @auth
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                            @guest
+                                <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                                <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        @can ('admin-panel')
+                                            <a class="dropdown-item" href="{{ route('admin.home') }}">Admin</a>
+                                        @endcan
+    {{--                                    <a class="dropdown-item" href="#">Cabinet</a>--}}
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                               document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @endguest
+                        </ul>
+                    @endauth
                 </div>
             </div>
         </nav>
@@ -82,7 +84,7 @@
     <footer>
         <div class="container">
             <div class="border-top pt-3">
-                <p style="text-align: center;">&copy; {{ date('Y') }} - {{ config('app.author') }}</p>
+                <p style="text-align: center;">&copy; {{ date('Y') }} - {{ config('app.name') }}</p>
             </div>
         </div>
     </footer>
@@ -92,5 +94,6 @@
 <!-- Scripts -->
 <script  src="{{ mix('js/app.js', (config('app.env') == 'local') ? 'build' : '') }}" defer></script>
 @yield('scripts')
+
 </body>
 </html>

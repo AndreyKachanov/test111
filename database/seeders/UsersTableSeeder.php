@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
         }
 
         User::create([
-            'email'             => 'test@test.loc',
+            'email'             => '777@8220.ru',
             'name'              => 'Иван Иванов',
             'phone'             => '380997111111',
             'phone_auth'        => false,
@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
             'created_at'        => Carbon::now(),
             'updated_at'        => Carbon::now(),
             'status'            => User::STATUS_ACTIVE,
-            'password'          => Hash::make('qwerty')
+            'password'          => Hash::make('qwerty123')
         ]);
 
 //        factory(User::class, 1000)->create();

@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,11 +36,13 @@ Route::group(
         'prefix'     => 'admin',
         'as'         => 'admin.',
         'namespace'  => 'Admin',
-//        'middleware' => ['auth', 'can:admin-panel']
+        'middleware' => ['auth', 'can:admin-panel']
     ],
     function () {
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('users', 'UsersController');
+        Route::resource('categories', 'Items\CategoryController');
+        Route::resource('items', 'Items\ItemsController');
         Route::post('/users/{user}/verify', 'UsersController@verify')->name('users.verify');
     }
 );

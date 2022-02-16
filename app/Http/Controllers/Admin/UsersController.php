@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Entity\User\User;
+use App\Models\User\User;
 use App\Http\Requests\Admin\Users\CreateRequest;
 use App\Http\Requests\Admin\Users\UpdateRequest;
 use App\Http\Controllers\Controller;
 use App\UseCases\Auth\RegisterService;
 use Illuminate\Http\Request;
-
 
 class UsersController extends Controller
 {
@@ -18,7 +17,7 @@ class UsersController extends Controller
     {
         $this->register = $register;
         // к этому контроллеру имеют доступ только те пользователи, у которых есть разрешение manage:users
-        $this->middleware('can:manage-users');
+        $this->middleware('can:admin-panel');
     }
 
     public function index(Request $request)
@@ -60,7 +59,7 @@ class UsersController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
