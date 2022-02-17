@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         if (App::environment('local')) {
-            \Artisan::call('migrate:fresh');
             $this->call(RolesTableSeeder::class);
             $this->call(UsersTableSeeder::class);
             $this->call(PermissionsTableSeeder::class);
