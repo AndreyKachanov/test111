@@ -149,24 +149,24 @@
     <div class="card card-default mb-3">
         <div class="card-header">
 
-            <div class="container">
-                <div class="v4"><a href="https://t.me/bshop100" target=:_blank>Телеграмм</a></div>
-                <div class="v4"><a href="https://vk.com/bshop100" target=:_blank>VK</a></div>
-                <div class="v4"><a href="https://vm.tiktok.com/ZSefm7dBH/" target=:_blank>TikTok</a></div>
-                <div class="v4"><a href="https://instagram.com/b_shop_optom?utm_medium=copy_link" target=:_blank>Instagram</a></div>
-                <div class="v4"><a href="https://b-shop-optom.ru/" target=:_blank>Сайт</a></div>
-                <div class="v4"><a href="https://youtube.com/channel/UC_1rML8W9qkuaVpIGZu2cjg" target=:_blank>YouTube</a></div>
-                <br><br>
+{{--            <div class="container">--}}
+{{--                <div class="v4"><a href="https://t.me/bshop100" target=:_blank>Телеграмм</a></div>--}}
+{{--                <div class="v4"><a href="https://vk.com/bshop100" target=:_blank>VK</a></div>--}}
+{{--                <div class="v4"><a href="https://vm.tiktok.com/ZSefm7dBH/" target=:_blank>TikTok</a></div>--}}
+{{--                <div class="v4"><a href="https://instagram.com/b_shop_optom?utm_medium=copy_link" target=:_blank>Instagram</a></div>--}}
+{{--                <div class="v4"><a href="https://b-shop-optom.ru/" target=:_blank>Сайт</a></div>--}}
+{{--                <div class="v4"><a href="https://youtube.com/channel/UC_1rML8W9qkuaVpIGZu2cjg" target=:_blank>YouTube</a></div>--}}
+{{--                <br><br>--}}
 
-                <div class="v3">Менеджер Олег</div>
-                <div class="v3">+7 915 254-32-01</div>
-                <div class="v3"><a href="https://api.whatsapp.com/send?phone=79152543201" target=:_blank>Написать в WhatsApp</a></div>
-                <br><br>
+{{--                <div class="v3">Менеджер Олег</div>--}}
+{{--                <div class="v3">+7 915 254-32-01</div>--}}
+{{--                <div class="v3"><a href="https://api.whatsapp.com/send?phone=79152543201" target=:_blank>Написать в WhatsApp</a></div>--}}
+{{--                <br><br>--}}
 
-                <div class="v3">Менеджер Максим</div>
-                <div class="v3">+7 915 432-97-92</div>
-                <div class="v3"><a href="https://api.whatsapp.com/send?phone=79154329792" target=:_blank>Написать в WhatsApp</a></div>
-            </div>
+{{--                <div class="v3">Менеджер Максим</div>--}}
+{{--                <div class="v3">+7 915 432-97-92</div>--}}
+{{--                <div class="v3"><a href="https://api.whatsapp.com/send?phone=79154329792" target=:_blank>Написать в WhatsApp</a></div>--}}
+{{--            </div>--}}
         </div>
 
 {{--        <div class="card mb-3">--}}
