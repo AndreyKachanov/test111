@@ -18,7 +18,7 @@
     </div>
     <div class="row">
         <div style="margin: 20px auto;">
-            <img src="{{ Storage::disk('public')->url($item->img) }}" alt="" width="300" height="350">
+            <img src="{{ Storage::disk('uploads')->url($item->img) }}" alt="" width="300" height="350">
         </div>
     </div>
     <table class="table table-bordered table-striped">

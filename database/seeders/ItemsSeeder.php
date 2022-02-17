@@ -20,10 +20,10 @@ class ItemsSeeder extends Seeder
             throw new Exception(Item::getTableName() . ' table is not empty. Stop all seeds!!!');
         }
 
-        Storage::disk('public')->deleteDirectory('items');
-        Storage::disk('public')->createDirectory('items');
+        Storage::disk('uploads')->deleteDirectory('items');
+        Storage::disk('uploads')->createDirectory('items');
 
 //        factory(Item::class, 10)->create();
-        Item::factory()->count(300)->create();
+        Item::factory()->count(30)->create();
     }
 }

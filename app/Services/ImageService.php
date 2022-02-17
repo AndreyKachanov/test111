@@ -13,7 +13,8 @@ class ImageService
      * @param  string  $filePathFromRequest
      * @return string
      */
-    public function saveImageWithResize(string $filePathFromRequest): string {
+    public function saveImageWithResize(string $filePathFromRequest): string
+    {
         try {
             $img = Image::make($filePathFromRequest);
             $img->orientate()->fit(300, 350, function ($constraint) {
@@ -22,8 +23,7 @@ class ImageService
             $now = Carbon::now()->toDateTimeString();
             $hash = md5($img->__toString() . $now);
             $fileName = 'items/' . $hash . '.jpg';
-            Storage::disk('public')->put($fileName, $img);
-
+            Storage::disk('uploads')->put($fileName, $img);
         } catch (Exception $e) {
             $errorMsg = sprintf(
                 '[%s]. Exception thrown. Error insert items image path to database. %s.  Class - %s, line - %d',

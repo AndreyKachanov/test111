@@ -25,7 +25,7 @@ class ItemFactory extends Factory
             'price2' => '50',
             'price3' => '30',
             'link' => '4a9f99dc105',
-            'img' => 'items/' . $this->faker->image(Storage::disk('public')->path('items/'), 300, 350, 'cats', false),
+            'img' => 'items/' . $this->faker->image(Storage::disk('uploads')->path('items/'), 300, 350, 'cats', false),
             'category_id' => rand(1, Category::count())
         ];
     }

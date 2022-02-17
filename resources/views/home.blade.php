@@ -222,7 +222,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <img
-                                        src="{{ Storage::disk('public')->url($item->img) }}"
+                                        src="{{ Storage::disk('uploads')->url($item->img) }}"
                                         alt="{{ $item->title }}"
                                         {{--                                        width="300"--}}
                                         {{--                                        height="350"--}}
