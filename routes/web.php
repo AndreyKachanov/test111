@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ Route::post('/login/phone', 'Auth\LoginController@verify');
 Route::get('/verify/{token}', 'Auth\RegisterController@verify')->name('register.verify');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+//Route::get('/', [TestController::class, 'index'])->name('home');
 
 
 
