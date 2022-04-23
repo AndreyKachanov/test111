@@ -11,13 +11,17 @@ require('./bootstrap');
 
 
 import { createApp } from 'vue'
+
 import Test from './components/TestComponent'
+// import My from './components/MyComponent'
 
 const app = createApp({})
 
 app.component('test', Test)
+// app.component('my-test', My)
 
 app.mount('#app')
+
 
 // import Vue from 'vue';
 

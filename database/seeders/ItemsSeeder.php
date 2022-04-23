@@ -24,6 +24,6 @@ class ItemsSeeder extends Seeder
         Storage::disk('uploads')->createDirectory('items');
 
 //        factory(Item::class, 10)->create();
-        Item::factory()->count(30)->create();
+        Item::factory()->count(10)->create();
     }
 }

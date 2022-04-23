@@ -9,10 +9,10 @@
 {{--@section('breadcrumbs', '')--}}
 
 @section('content')
-    <test />
+    <test></test>
 @endsection
 @section('scripts')
     <script>
-        console.log(123);
+        console.log('test');
     </script>
 @endsection
