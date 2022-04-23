@@ -16,22 +16,14 @@
 @section('content')
     <div class="card card-default mb-3">
         <div class="card-header">
-
+            All Categories
         </div>
-
 
         <form action="?" method="GET">
             <div class="zz" >
                 @foreach ($categories as $category)
                     <div >
-                        <button style="margin: 4px; font-weight: 500;
-                                      color: white;
-                                      text-decoration: none;
-                                      padding: .4em 10px ;
-                                      border-radius: 3px;
-                                      background: rgb(64,199,129);
-                                      box-shadow: 0 -3px rgb(53,167,110) inset;
-                                      transition: 0.2s;" type="submit" name="search_by_category" value="{{ $category->id }}">
+                        <button type="submit" name="search_by_category" value="{{ $category->id }}">
                             {{ $category->title }}
                         </button>
                     </div>
@@ -78,24 +70,6 @@
                 @endforeach
             </div>
         </div>
-        <form action="?" method="GET">
-            <div class="zz" >
-                @foreach ($categories as $category)
-                    <div >
-                        <button style="margin: 4px; font-weight: 500;
-  color: white;
-  text-decoration: none;
-  padding: .4em 10px;
-  border-radius: 3px;
-  background: rgb(64,199,129);
-  box-shadow: 0 -3px rgb(53,167,110) inset;
-  transition: 0.2s;" type="submit" name="category" value="{{ $category->id }}">
-                            {{ $category->title }}
-                        </button>
-                    </div>
-                @endforeach
-            </div>
-        </form>
     </div>
     <div class="pagination justify-content-center">
         {{ $items->appends(request()->except('page'))->links() }}
@@ -103,6 +77,6 @@
 @endsection
 @section('scripts')
     <script>
-        console.log(123);
+        console.log('test 123 custom script');
     </script>
 @endsection
