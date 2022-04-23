@@ -1,8 +1,79 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+//@import "~font-awesome/scss/font-awesome.scss";
+//@import "~summernote/dist/summernote-bs4.css";
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.navbar {
+  background-color: #0c64a2;
+  padding: 0.35rem 1rem;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  min-width: 270px;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1;
+
+  //@include media-breakpoint-down(sm) {
+  //    background-color: #edeef0;;
+  //}
+}
+
+.table th, .table td {
+  padding: 0.55rem 0.75rem;
+}
+
+.breadcrumb {
+  background: none;
+  padding: 0;
+}
+
+.nav-item.active>.nav-link, .navbar.navbar-dark .navbar-nav .nav-item.active>.nav-link {
+  background-color: rgba(255,255,255,.1);
+}
+
+.nav-link {
+  display: block;
+  padding: .35rem 1rem;
+}
+table#table-transition-example .flip-list-move {
+  transition: transform 1s;
+}
+.nav-pills a {
+  font-size: 13px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #42b983;
+}
+
+.nav-link {
+  padding: 0.2rem 0.73rem;
+
+}
+
+.nav-pills .nav-link.red {
+  background-color: #f0ad4e;
+  color: #4c1010;
+}
+
+.card-body p:last-child {
+  margin-bottom: 0;
+}

@@ -1,4 +1,6 @@
+require('dotenv').config();
 const mix = require('laravel-mix');
+const env = process.env.APP_ENV;
 
 /*
  |--------------------------------------------------------------------------
@@ -11,6 +13,19 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .vue()
-    .sass('resources/sass/app.scss', 'public/css');
+if (env === 'production' || env === 'dev') {
+    mix
+        .js('resources/js/app.js', 'public/js')
+        .vue()
+        .sass('resources/sass/app.scss', 'public/css')
+        .version();
+} else {
+    mix
+        .setPublicPath('public/build')
+        .setResourceRoot('/build/')
+        .js('resources/js/app.js', 'js')
+        .vue()
+        .sass('resources/sass/app.scss', 'css')
+        .version();
+}
+
