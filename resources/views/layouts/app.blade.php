@@ -92,8 +92,12 @@
 </div>
 
 <!-- Scripts -->
-<script  src="{{ mix('js/app.js', (config('app.env') == 'local') ? 'build' : '') }}" defer></script>
+<script  src="{{ mix('js/app.js', (config('app.env') == 'local') ? 'build' : '') }}"></script>
+
 @yield('scripts')
 
+@env('local')
+
+@endenv
 </body>
 </html>
